@@ -2,7 +2,7 @@
 
 **A comprehensive 100-level educational recycling game built with vanilla HTML5, CSS3, and JavaScript**
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://your-demo-link.com)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://sudip-sasquash0x01.github.io/Eco-Rangers/)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/Sudip-sasquash0x01/Eco-Rangers)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
