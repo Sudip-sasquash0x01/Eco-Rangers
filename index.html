@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"="width=device-width, initial-scale=1.0">
+    <title>Eco Rangers - 100 Levels Adventure!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Sound Toggle -->
+        <button class="sound-toggle" id="soundToggle" onclick="toggleSound()">🔊</button>
+
+        <!-- Start Screen -->
+        <div class="screen start-screen" id="startScreen">
+            <h1 class="title">🌍 ECO RANGERS 🌍</h1>
+            <p class="subtitle">Epic Adventure - 100+ Levels Around The World!</p>
+            <div class="feature-list">
+                ✨ 100 Unique Levels ✨ Beautiful Sounds ✨<br>
+                🎯 Multiple Game Modes 🎯 Global Locations 🎯<br>
+                🏆 Daily Challenges & Achievements 🏆
+            </div>
+            
+            <!-- Resume Game Notice (shown when saved game exists) -->
+            <div class="resume-notice hidden" id="resumeNotice">
+                🎮 You have a saved game in progress!
+            </div>
+            
+            <div class="mode-selection">
+                <h3 style="color: #2C3E50; text-align: center; margin-bottom: 0.5rem;">Choose Your Adventure Mode:</h3>
+                <div class="mode-buttons">
+                    <button class="mode-btn active" onclick="selectMode('adventure')" id="adventureBtn">
+                        🗺️ Adventure Mode
+                    </button>
+                    <button class="mode-btn" onclick="selectMode('zen')" id="zenBtn">
+                        🧘 Zen Mode
+                    </button>
+                    <button class="mode-btn" onclick="selectMode('timeattack')" id="timeAttackBtn">
+                        ⚡ Time Attack
+                    </button>
+                    <button class="mode-btn" onclick="selectMode('challenge')" id="challengeBtn">
+                        🔥 Daily Challenge
+                    </button>
+                </div>
+            </div>
+            
+            <div id="startButtons">
+                <button class="start-btn" onclick="startGame()">🚀 START EPIC ADVENTURE</button>
+                <button class="resume-btn hidden" onclick="resumeGame()" id="resumeBtn">📱 CONTINUE GAME</button>
+            </div>
+            
+            <div class="animals">
+                <div class="animal">🦁</div>
+                <div class="animal">🐼</div>
+                <div class="animal">🦊</div>
+                <div class="animal">🐨</div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div class="screen game-screen hidden" id="gameScreen">
+            <!-- Game Controls -->
+            <button class="back-btn" onclick="goBackToMenu()">⬅️</button>
+            <button class="pause-btn" onclick="pauseGame()">⏸️</button>
+            
+            <div class="game-header">
+                <div class="score">Score: <span id="scoreValue">0</span></div>
+                <div class="level">Level: <span id="levelValue">1</span></div>
+                <div class="streak">Streak: <span id="streakValue">0</span></div>
+                <div class="time">Time: <span id="timeValue">60</span>s</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            
+            <div class="game-area">
+                <div class="level-info" id="levelInfo">🏞️ Forest Park - Help clean up this beautiful forest!</div>
+                
+                <div class="trash-container">
+                    <div class="trash-items" id="trashItems">
+                        <!-- Trash items will be generated here -->
+                    </div>
+                    
+                    <div class="recycling-bins" id="recyclingBins">
+                        <!-- Bins will be generated dynamically -->
+                    </div>
+                </div>
+                
+                <div class="animals" id="gameAnimals">
+                    <div class="animal">🐨</div>
+                    <div class="animal">🦝</div>
+                    <div class="animal">🐸</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Complete Screen -->
+        <div class="screen complete-screen hidden" id="completeScreen">
+            <button class="back-btn" onclick="goBackToMenu()">⬅️</button>
+            
+            <h1 class="complete-title" id="completeTitle">🎉 LEVEL COMPLETE! 🎉</h1>
+            <div class="final-score" id="finalScore">Score: 0</div>
+            <div id="achievements"></div>
+            <button class="next-level-btn" onclick="nextLevel()" id="nextBtn">🌟 NEXT ADVENTURE</button>
+            <button class="restart-btn" onclick="restartGame()">🔄 RESTART GAME</button>
+            <div class="animals">
+                <div class="animal">🦁</div>
+                <div class="animal">🐘</div>
+                <div class="animal">🦒</div>
+                <div class="animal">🦋</div>
+            </div>
+        </div>
+
+        <!-- Pause Menu -->
+        <div class="pause-menu hidden" id="pauseMenu">
+            <div class="pause-content">
+                <div class="pause-title">⏸️ GAME PAUSED</div>
+                <div class="pause-buttons">
+                    <button class="pause-btn-item" onclick="resumeFromPause()">
+                        ▶️ Continue Playing
+                    </button>
+                    <button class="pause-btn-item" onclick="saveAndQuit()">
+                        💾 Save & Quit
+                    </button>
+                    <button class="pause-btn-item" onclick="goBackToMenu()">
+                        🏠 Back to Menu
+                    </button>
+                    <button class="pause-btn-item" onclick="restartLevel()">
+                        🔄 Restart Level
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
